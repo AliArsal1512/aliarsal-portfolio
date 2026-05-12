@@ -114,7 +114,7 @@ function Hero() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3 text-xs md:text-sm font-technical tracking-[0.2em] uppercase text-orange-500 font-bold">
               <span className="w-8 h-px bg-orange-500" />
-              Machine Learning Engineer
+              Computer Science Graduate
             </div>
             <h2 className="font-display text-6xl md:text-[120px] leading-[0.9] tracking-tighter uppercase max-w-2xl">
               {RESUME_DATA.name}
