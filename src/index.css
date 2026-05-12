@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-technical: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white overflow-x-hidden;
+  }
+}
+
+/* Custom Hide Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* Hero: scrim stays on the left; clears by ~2/3 width so the portrait stays mostly clean */
+.hero-left-animated-gradient {
+  background-image: linear-gradient(
+    to right,
+    #020101 0%,
+    #0a0705 10%,
+    #18100c 20%,
+    rgba(42, 26, 17, 0.55) 32%,
+    rgba(28, 17, 11, 0.22) 44%,
+    rgba(12, 8, 6, 0.06) 54%,
+    transparent 66%
+  );
+  background-size: 155% 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  animation: hero-left-gradient-pan 26s ease-in-out infinite;
+}
+
+@keyframes hero-left-gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 10% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-left-animated-gradient {
+    animation: none;
+    background-size: 100% 100%;
+    background-position: 0% 50%;
+  }
+}
